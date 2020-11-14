@@ -1,0 +1,214 @@
+@for $space from 1 through 400 {
+  .mt-#{$space} {
+    margin-top: #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .ml-#{$space} {
+    margin-left: #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .mr-#{$space} {
+    margin-right: #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .my-#{$space} {
+    margin: #{$space}px 0 !important ;
+  }
+  .mx-#{$space} {
+    margin: 0 #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .m-#{$space} {
+    margin: #{$space}px !important;
+    box-sizing: border-box;
+  }
+  //   padding
+  .pt-#{$space} {
+    padding-top: #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .pb-#{$space} {
+    padding-bottom: #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .pl-#{$space} {
+    padding-left: #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .pr-#{$space} {
+    padding-right: #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .py-#{$space} {
+    padding: #{$space}px 0 !important ;
+  }
+  .px-#{$space} {
+    padding: 0 #{$space}px !important;
+    box-sizing: border-box;
+  }
+  .p-#{$space} {
+    padding: #{$space}px !important;
+    box-sizing: border-box;
+  }
+}
+
+@each $align in (center, left, right) {
+  .text-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+@mixin mp-0 {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin flex($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+// Width
+
+@for $i from 1 through 100 {
+  .w-#{$i} {
+    width: ($i * 1%);
+    margin: 0 auto;
+  }
+}
+
+// width px
+@for $i from 1 through 2000 {
+  .wpx-#{$i } {
+    width: #{$i}px;
+  }
+}
+
+// font weight
+@for $i from 1 through 9 {
+  .f-#{$i * 100} {
+    font-weight: ($i * 100);
+    &::placeholder {
+      font-weight: ($i * 100);
+    }
+  }
+}
+
+// font size
+@for $i from 1 through 200 {
+  .fs-#{$i } {
+    font-size: #{$i}px;
+  }
+}
+
+// border
+@each $border in (bottom, left, right, top, none) {
+  .border {
+    border: 1px solid #c5c5c5;
+  }
+  .border-#{$border} {
+    border: 0;
+    border-#{$border}: 1px solid #c5c5c5;
+  }
+}
+
+// border radius
+@for $i from 1 through 100 {
+  .br-#{$i } {
+    border-radius: #{$i}px;
+  }
+}
+
+// position
+@each $position in (relative, absolute, fixed) {
+  .p-#{$position} {
+    position: $position;
+  }
+}
+
+// bottom top left right px
+@for $i from 0 through 1000 {
+  .bpx-#{$i } {
+    bottom: #{$i}px;
+  }
+
+  .tpx-#{$i } {
+    top: #{$i}px;
+  }
+
+  .lpx-#{$i } {
+    left: #{$i}px;
+  }
+
+  .rpx-#{$i } {
+    right: #{$i}px;
+  }
+}
+
+// foate
+@each $float in (left, right, center) {
+  .fo-#{$float} {
+    float: $float;
+  }
+}
+
+// color
+@each $color in (white, black, green, blue) {
+  .text-#{$color} {
+    color: $color;
+  }
+}
+
+// cursor
+@each $cursor
+  in (
+    pointer,
+    default,
+    unset,
+    auto,
+    none,
+    progress,
+    wait,
+    crosshair,
+    cell,
+    text,
+    alias,
+    not-allowed
+  )
+{
+  .cursor-#{$cursor} {
+    cursor: $cursor;
+  }
+}
+
+// bg
+@function setBg($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+// media
+@mixin tab() {
+  @media (max-width: 769px) {
+    @content;
+  }
+}
+@mixin phn() {
+  @media (max-width: 426px) {
+    @content;
+  }
+}
+
+@mixin custom($screen) {
+  @media (max-width: $screen) {
+    @content;
+  }
+}

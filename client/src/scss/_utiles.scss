@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  @include mp-0();
+}
+body,
+input {
+  font-family: $montserrat;
+}
+
+input:disabled {
+  background: none;
+}
+a {
+  color: $a;
+}
+
+.flex {
+  @include flex(unset);
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input,
+textarea {
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: black;
+  }
+}
+
+.bg-3f90fc {
+  background: #3f90fc;
+  color: setBg(#3f90fc);
+  &:hover {
+    background: darken(#3f90fc, 10%);
+  }
+}
+.bg-434141 {
+  background: #434141;
+  color: setBg(#434141);
+  &:hover {
+    background: darken(#434141, 10%);
+  }
+}
+.bg-e3e3e3 {
+  background: #e3e3e3;
+  color: setBg(#e3e3e3);
+  &:hover {
+    background: darken(#e3e3e3, 10%);
+  }
+}
+
+.bg-ff444a {
+  background: #ff444a;
+  color: setBg(#ff444a);
+  &:hover {
+    background: darken(#ff444a, 20%);
+  }
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+
+  @include custom(1050px) {
+    width: 90%;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+// media
+@include tab() {
+  header {
+    // display: none;
+  }
+  .login {
+    &-container {
+      width: 100%;
+    }
+  }
+}

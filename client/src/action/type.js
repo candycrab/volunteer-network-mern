@@ -1,0 +1,12 @@
+export const GET_USER = "GET_USER";
+export const LOG_OUT = "LOG_OUT";
+export const USER_ERROR = "USER_ERROR";
+export const ADD_EVENT = "ADD_EVENT";
+export const DELETE_EVENT = "DELETE_EVENT";
+export const GET_EVENT = "GET_EVENT";
+export const GET_SINGLE = "GET_SINGLE";
+export const GET_VOLUNTEER = "GET_VOLUNTEER";
+export const REGISTER_VOLUNTEER = "REGISTER_VOLUNTEER";
+export const VOLUNTEER = "VOLUNTEER";
+export const ERROR_VOLUNTEER = "ERROR_VOLUNTEER";
+export const DELETE_VOLUNTEER = "DELETE_VOLUNTEER";
